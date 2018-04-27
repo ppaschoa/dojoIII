@@ -25,6 +25,6 @@ Cenário: requisição get leitura de livro
 
 @alterar
 Cenário: requisição para alteração de livro
- Dado que tenho um post a alterar
+ #Dado que tenho um post a alterar
  Quando requisitar put a alteração de um livro
  Então receberei um Json com a alteração proposta

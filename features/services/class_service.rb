@@ -6,6 +6,10 @@ class Livro
 
 	attr_reader :request_body
 
+#	def initialize
+#		@response = HTTParty.get("http://fakerestapi.azurewebsites.net/api/Books")
+#	end
+
 
 	def post(title, description, excerpt, publishdate)
 		json = Hash.new
@@ -20,8 +24,10 @@ class Livro
 		self.class.get("/#{index}")
 	end
 
-	def put()
-
+	def put(index=nil)
+		self.class.put("http://fakerestapi.azurewebsites.net/api/Books",
+		 :body => {'excerpt' => 'Edição Especial do Dia das Mães'}.to_json,
+		 :header => {'Content-Type' => 'application/json'})
 	end
 
 end
